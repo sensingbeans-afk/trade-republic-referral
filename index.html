@@ -80,25 +80,45 @@
                      alt="Trade Republic logo" class="h-9">
                 <span class="font-semibold text-2xl tracking-tight">Trade Republic</span>
             </div>
-            <button onclick="copyLink()" 
-                    class="flex items-center gap-2 px-6 py-3 text-sm font-medium border border-black rounded-2xl hover:bg-black hover:text-white transition-all">
-                <i class="fa-solid fa-share-nodes"></i> Share Referral Link
-            </button>
+            <div class="flex items-center gap-4">
+                <button onclick="copyLink()" 
+                        class="flex items-center gap-2 px-6 py-3 text-sm font-medium border border-black rounded-2xl hover:bg-black hover:text-white transition-all">
+                    <i class="fa-solid fa-share-nodes"></i> Share Referral Link
+                </button>
+
+                <!-- SEARCHABLE LANGUAGE DROPDOWN - black & white theme -->
+                <div class="relative">
+                  <button onclick="toggleLanguageMenu()" 
+                          class="flex items-center gap-2 px-4 py-2 bg-white border border-black rounded-2xl hover:border-emerald-600 transition-all text-sm font-medium">
+                    <span id="current-lang" class="font-medium">🇬🇧 English</span>
+                    <i class="fa-solid fa-chevron-down text-xs"></i>
+                  </button>
+
+                  <div id="lang-menu" class="hidden absolute right-0 mt-2 w-72 bg-white rounded-3xl shadow-2xl border border-black py-3 z-50">
+                    <div class="px-4 pb-2">
+                      <input id="lang-search" type="text" placeholder="Search language..." 
+                             onkeyup="filterLanguages()"
+                             class="w-full px-4 py-3 border border-zinc-300 rounded-2xl focus:outline-none focus:border-black text-sm">
+                    </div>
+                    <div id="lang-list" class="max-h-80 overflow-auto"></div>
+                  </div>
+                </div>
+            </div>
         </div>
     </nav>
 
     <!-- HERO -->
     <header class="bg-white py-20 border-b">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h1 class="text-5xl md:text-6xl font-bold tracking-tighter leading-none mb-6">
+            <h1 class="text-5xl md:text-6xl font-bold tracking-tighter leading-none mb-6" data-i18n="heroTitle">
                 Trade Republic Referral Code • Get Your <span class="text-emerald-600">Welcome Bonus</span>
             </h1>
-            <p class="text-2xl text-gray-700 mb-8">
+            <p class="text-2xl text-gray-700 mb-8" data-i18n="heroSubtitle">
                 Join Trade Republic with my referral link and claim your free stock or cash bonus. No separate discount code needed.
             </p>
 
             <div class="bg-zinc-100 border border-zinc-300 rounded-3xl p-8 mb-10 max-w-xl mx-auto">
-                <p class="text-lg font-medium mb-4">My Trade Republic Referral Link (2026)</p>
+                <p class="text-lg font-medium mb-4" data-i18n="referralLinkLabel">My Trade Republic Referral Link (2026)</p>
                 <a href="https://refnocode.trade.re/rtbld676" target="_blank" 
                    class="block text-black font-mono text-xl hover:underline break-all">
                     https://refnocode.trade.re/rtbld676
@@ -107,46 +127,46 @@
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="https://refnocode.trade.re/rtbld676" target="_blank"
-                   class="btn-primary font-semibold text-xl px-12 py-6 rounded-3xl flex items-center justify-center gap-3 text-lg">
+                   class="btn-primary font-semibold text-xl px-12 py-6 rounded-3xl flex items-center justify-center gap-3 text-lg" data-i18n="claimButton">
                     Claim Trade Republic Bonus Now <i class="fa-solid fa-arrow-right"></i>
                 </a>
                 <button onclick="copyLink()" 
-                        class="border border-black font-medium px-10 py-6 rounded-3xl flex items-center justify-center gap-3 hover:bg-black hover:text-white text-lg">
+                        class="border border-black font-medium px-10 py-6 rounded-3xl flex items-center justify-center gap-3 hover:bg-black hover:text-white text-lg" data-i18n="copyButton">
                     <i class="fa-solid fa-copy"></i> Copy Referral Link
                 </button>
             </div>
 
-            <p class="text-gray-500 mt-8 text-sm">Investments involve risk. T&Cs apply. Bonus terms in app.</p>
+            <p class="text-gray-500 mt-8 text-sm" data-i18n="disclaimer">Investments involve risk. T&Cs apply. Bonus terms in app.</p>
         </div>
     </header>
 
     <!-- BENEFITS -->
     <section class="py-20 bg-white">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-4">What You Get with Trade Republic Referral</h2>
-            <p class="text-center text-xl text-gray-600 mb-12">Welcome bonus + zero-commission trading</p>
+            <h2 class="text-4xl font-bold text-center mb-4" data-i18n="benefitsTitle">What You Get with Trade Republic Referral</h2>
+            <p class="text-center text-xl text-gray-600 mb-12" data-i18n="benefitsSubtitle">Welcome bonus + zero-commission trading</p>
             
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="card bg-white border border-zinc-200 rounded-3xl p-8 text-center">
                     <div class="mx-auto w-20 h-20 bg-black rounded-3xl flex items-center justify-center mb-6">
                         <i class="fa-solid fa-gift text-5xl text-white"></i>
                     </div>
-                    <h3 class="font-bold text-3xl mb-2">Welcome Bonus</h3>
-                    <p class="text-gray-600">Free stock or cash when you join via this referral link</p>
+                    <h3 class="font-bold text-3xl mb-2" data-i18n="bonusCardTitle">Welcome Bonus</h3>
+                    <p class="text-gray-600" data-i18n="bonusCardDesc">Free stock or cash when you join via this referral link</p>
                 </div>
                 <div class="card bg-white border border-zinc-200 rounded-3xl p-8 text-center">
                     <div class="mx-auto w-20 h-20 bg-black rounded-3xl flex items-center justify-center mb-6">
                         <i class="fa-solid fa-chart-line text-5xl text-white"></i>
                     </div>
-                    <h3 class="font-bold text-3xl mb-2">Invest from €1</h3>
-                    <p class="text-gray-600">Stocks, ETFs, Crypto, Savings plans — all commission-free</p>
+                    <h3 class="font-bold text-3xl mb-2" data-i18n="investCardTitle">Invest from €1</h3>
+                    <p class="text-gray-600" data-i18n="investCardDesc">Stocks, ETFs, Crypto, Savings plans — all commission-free</p>
                 </div>
                 <div class="card bg-white border border-zinc-200 rounded-3xl p-8 text-center">
                     <div class="mx-auto w-20 h-20 bg-black rounded-3xl flex items-center justify-center mb-6">
                         <i class="fa-solid fa-credit-card text-5xl text-white"></i>
                     </div>
-                    <h3 class="font-bold text-3xl mb-2">Free Card + 1% Saveback</h3>
-                    <p class="text-gray-600">Spend anywhere and earn cashback on purchases</p>
+                    <h3 class="font-bold text-3xl mb-2" data-i18n="cardTitle">Free Card + 1% Saveback</h3>
+                    <p class="text-gray-600" data-i18n="cardDesc">Spend anywhere and earn cashback on purchases</p>
                 </div>
             </div>
         </div>
@@ -155,11 +175,11 @@
     <!-- TRANSPARENCY -->
     <section class="py-20 bg-zinc-50">
         <div class="max-w-2xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-6">What I Get (Full Transparency)</h2>
+            <h2 class="text-4xl font-bold mb-6" data-i18n="transparencyTitle">What I Get (Full Transparency)</h2>
             <div class="bg-white border border-zinc-200 p-12 rounded-3xl">
                 <div class="text-7xl font-bold text-emerald-600">3%</div>
-                <p class="text-2xl font-medium mt-2">interest on my cash for 3 months per successful referral</p>
-                <p class="mt-6 text-gray-600">Up to 1 year max. You still get your own welcome bonus.</p>
+                <p class="text-2xl font-medium mt-2" data-i18n="transparencyDesc">interest on my cash for 3 months per successful referral</p>
+                <p class="mt-6 text-gray-600" data-i18n="transparencyNote">Up to 1 year max. You still get your own welcome bonus.</p>
             </div>
         </div>
     </section>
@@ -167,23 +187,23 @@
     <!-- FAQ -->
     <section class="py-20 bg-white">
         <div class="max-w-4xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-12">Trade Republic Referral Code FAQ</h2>
+            <h2 class="text-4xl font-bold text-center mb-12" data-i18n="faqTitle">Trade Republic Referral Code FAQ</h2>
             <div class="space-y-8">
                 <div>
-                    <h3 class="font-semibold text-xl mb-2">How do I get the Trade Republic welcome bonus?</h3>
-                    <p class="text-gray-600">Click my referral link above, sign up, and complete the required deposit/investment steps shown in the app. Bonus is credited automatically.</p>
+                    <h3 class="font-semibold text-xl mb-2" data-i18n="faq1Title">How do I get the Trade Republic welcome bonus?</h3>
+                    <p class="text-gray-600" data-i18n="faq1Desc">Click my referral link above, sign up, and complete the required deposit/investment steps shown in the app. Bonus is credited automatically.</p>
                 </div>
                 <div>
-                    <h3 class="font-semibold text-xl mb-2">Is there a separate Trade Republic discount code or promo code?</h3>
-                    <p class="text-gray-600">No need — the referral link acts as the promo code. Just use the link.</p>
+                    <h3 class="font-semibold text-xl mb-2" data-i18n="faq2Title">Is there a separate Trade Republic discount code or promo code?</h3>
+                    <p class="text-gray-600" data-i18n="faq2Desc">No need — the referral link acts as the promo code. Just use the link.</p>
                 </div>
                 <div>
-                    <h3 class="font-semibold text-xl mb-2">How much is the Trade Republic sign up bonus?</h3>
-                    <p class="text-gray-600">New users typically get a free stock worth €5–€200 (random). Check the app after signup for exact terms.</p>
+                    <h3 class="font-semibold text-xl mb-2" data-i18n="faq3Title">How much is the Trade Republic sign up bonus?</h3>
+                    <p class="text-gray-600" data-i18n="faq3Desc">New users typically get a free stock worth €5–€200 (random). Check the app after signup for exact terms.</p>
                 </div>
                 <div>
-                    <h3 class="font-semibold text-xl mb-2">Does this work in 2026?</h3>
-                    <p class="text-gray-600">Yes — referral program is active. Terms can change, always confirm in the app.</p>
+                    <h3 class="font-semibold text-xl mb-2" data-i18n="faq4Title">Does this work in 2026?</h3>
+                    <p class="text-gray-600" data-i18n="faq4Desc">Yes — referral program is active. Terms can change, always confirm in the app.</p>
                 </div>
             </div>
         </div>
@@ -191,20 +211,121 @@
 
     <footer class="bg-black text-white py-12 text-center text-sm">
         <div class="max-w-5xl mx-auto px-6">
-            <p>Independent Trade Republic referral page • Not officially affiliated</p>
-            <p class="mt-4">© Trade Republic Bank • Investments involve risks. T&Cs apply.</p>
+            <p data-i18n="footerNote">Independent Trade Republic referral page • Not officially affiliated</p>
+            <p class="mt-4" data-i18n="footerCopyright">© Trade Republic Bank • Investments involve risks. T&Cs apply.</p>
         </div>
     </footer>
 
     <script>
-        function copyLink() {
-            navigator.clipboard.writeText("https://refnocode.trade.re/rtbld676");
-            const notif = document.createElement('div');
-            notif.textContent = 'Referral link copied!';
-            notif.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#000;color:white;padding:16px 32px;border-radius:9999px;font-weight:600;z-index:9999;';
-            document.body.appendChild(notif);
-            setTimeout(() => notif.remove(), 2500);
+        // === LANGUAGE SYSTEM (searchable dropdown + backend fetch for translations) ===
+        const languages = [
+          { code: "en", name: "English", flag: "🇬🇧", file: "i18n/en.json" },
+          { code: "fr", name: "Français", flag: "🇫🇷", file: "i18n/fr.json" },
+          { code: "de", name: "Deutsch", flag: "🇩🇪", file: "i18n/de.json" },
+          { code: "es", name: "Español", flag: "🇪🇸", file: "i18n/es.json" },
+          { code: "nl", name: "Nederlands", flag: "🇳🇱", file: "i18n/nl.json" },
+          { code: "it", name: "Italiano", flag: "🇮🇹", file: "i18n/it.json" },
+          { code: "pl", name: "Polski", flag: "🇵🇱", file: "i18n/pl.json" },
+          { code: "pt", name: "Português", flag: "🇵🇹", file: "i18n/pt.json" },
+          { code: "ru", name: "Русский", flag: "🇷🇺", file: "i18n/ru.json" },
+          { code: "ro", name: "Română", flag: "🇷🇴", file: "i18n/ro.json" },
+          { code: "uk", name: "Українська", flag: "🇺🇦", file: "i18n/uk.json" },
+          { code: "sv", name: "Svenska", flag: "🇸🇪", file: "i18n/sv.json" },
+          { code: "el", name: "Ελληνικά", flag: "🇬🇷", file: "i18n/el.json" },
+          { code: "cs", name: "Čeština", flag: "🇨🇿", file: "i18n/cs.json" },
+          { code: "hu", name: "Magyar", flag: "🇭🇺", file: "i18n/hu.json" },
+          { code: "fi", name: "Suomi", flag: "🇫🇮", file: "i18n/fi.json" },
+          { code: "bg", name: "Български", flag: "🇧🇬", file: "i18n/bg.json" },
+          { code: "hr", name: "Hrvatski", flag: "🇭🇷", file: "i18n/hr.json" },
+          { code: "sk", name: "Slovenčina", flag: "🇸🇰", file: "i18n/sk.json" },
+          { code: "lt", name: "Lietuvių", flag: "🇱🇹", file: "i18n/lt.json" },
+          { code: "lv", name: "Latviešu", flag: "🇱🇻", file: "i18n/lv.json" }
+        ];
+
+        let currentLang = "en";
+        let translations = {};
+
+        async function loadLanguage(langCode) {
+          const lang = languages.find(l => l.code === langCode);
+          if (!lang) return;
+
+          try {
+            // Calls backend (i18n JSON files - change to /api/translations/${langCode} if you add real backend later)
+            const res = await fetch(lang.file);
+            translations = await res.json();
+            currentLang = langCode;
+            document.getElementById("current-lang").innerHTML = `${lang.flag} ${lang.name}`;
+            applyTranslations();
+          } catch (e) {
+            console.error("Failed to load language file – add i18n/ folder with translations later", e);
+          }
         }
+
+        function applyTranslations() {
+          document.querySelectorAll("[data-i18n]").forEach(el => {
+            const key = el.getAttribute("data-i18n");
+            if (translations[key]) {
+              if (el.tagName === "A" || el.tagName === "BUTTON") {
+                // preserve icons
+                const icon = el.innerHTML.match(/<i.*?>.*?</i>/i);
+                el.innerHTML = (icon ? icon[0] : '') + translations[key];
+              } else {
+                el.innerHTML = translations[key];
+              }
+            }
+          });
+        }
+
+        function toggleLanguageMenu() {
+          const menu = document.getElementById("lang-menu");
+          menu.classList.toggle("hidden");
+          if (!menu.classList.contains("hidden")) {
+            filterLanguages();
+          }
+        }
+
+        function filterLanguages() {
+          const query = document.getElementById("lang-search").value.toLowerCase().trim();
+          const langList = document.getElementById("lang-list");
+          langList.innerHTML = "";
+
+          const filtered = languages.filter(l => 
+            l.name.toLowerCase().includes(query) || l.code.toLowerCase().includes(query)
+          );
+
+          filtered.forEach(lang => {
+            const div = document.createElement("div");
+            div.className = "flex items-center gap-3 px-4 py-3 hover:bg-zinc-100 rounded-2xl cursor-pointer mx-2";
+            div.innerHTML = `
+              <span class="text-xl">${lang.flag}</span>
+              <span class="font-medium">${lang.name}</span>
+              <span class="text-xs text-gray-400 ml-auto">${lang.code.toUpperCase()}</span>
+            `;
+            div.onclick = () => {
+              loadLanguage(lang.code);
+              document.getElementById("lang-menu").classList.add("hidden");
+            };
+            langList.appendChild(div);
+          });
+
+          if (filtered.length === 0) {
+            langList.innerHTML = `<div class="px-4 py-6 text-center text-gray-400">No languages found</div>`;
+          }
+        }
+
+        function copyLink() {
+          navigator.clipboard.writeText("https://refnocode.trade.re/rtbld676");
+          const notif = document.createElement('div');
+          notif.textContent = translations.copied || 'Referral link copied!';
+          notif.style.cssText = 'position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:#000;color:white;padding:16px 32px;border-radius:9999px;font-weight:600;z-index:9999;';
+          document.body.appendChild(notif);
+          setTimeout(() => notif.remove(), 2500);
+        }
+
+        // Init
+        window.onload = () => {
+          loadLanguage('en'); // default + loads translations if i18n/en.json exists
+        };
     </script>
 </body>
 </html>
