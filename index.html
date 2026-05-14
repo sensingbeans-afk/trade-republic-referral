@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Trade Republic via my referral and claim your welcome bonus.">
+    <title>Trade Republic • Get your welcome bonus</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        
+        * {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        .btn-primary {
+            background-color: #000000;
+            color: white;
+            transition: all 0.2s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: #222222;
+            transform: translateY(-1px);
+        }
+        
+        .card {
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+        }
+        
+        [data-i18n] {
+            /* i18n hooks - untouched */
+        }
+    </style>
+</head>
+<body class="bg-white text-black">
+    <!-- NAV -->
+    <nav class="bg-white border-b sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Trade_Republic_Logo.svg" 
+                     alt="Trade Republic" class="h-9">
+                <span class="font-semibold text-2xl tracking-tight">Trade Republic</span>
+            </div>
+            <button onclick="copyLink()" 
+                    class="flex items-center gap-2 px-6 py-3 text-sm font-medium border border-black rounded-2xl hover:bg-black hover:text-white transition-all">
+                <i class="fa-solid fa-share-nodes"></i>
+                Share my referral
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO - Clean white -->
+    <header class="bg-white py-20 border-b">
+        <div class="max-w-3xl mx-auto px-6 text-center">
+            <h1 class="text-5xl md:text-6xl font-semibold tracking-tighter leading-none mb-6" data-i18n="hero-title">
+                The smartest way to invest, spend and bank
+            </h1>
+            <p class="text-xl text-gray-600 mb-10" data-i18n="hero-subtitle">
+                Join through my link and secure your welcome bonus.
+            </p>
+
+            <div class="bg-zinc-100 border border-zinc-200 rounded-3xl p-8 mb-10">
+                <p class="italic text-lg text-gray-800 mb-6" data-i18n="shared-text">
+                    Join Trade Republic. The smartest way to invest, spend and bank. Create an account via the link to secure a welcome bonus.
+                </p>
+                <a href="https://refnocode.trade.re/rtbld676" target="_blank"
+                   class="block text-black font-semibold text-2xl hover:underline">
+                    https://refnocode.trade.re/rtbld676
+                </a>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://refnocode.trade.re/rtbld676" target="_blank"
+                   class="btn-primary font-semibold text-lg px-10 py-5 rounded-2xl flex items-center justify-center gap-3">
+                    Join now & claim bonus
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <button onclick="copyLink()" 
+                        class="border border-black font-medium px-8 py-5 rounded-2xl flex items-center justify-center gap-3 hover:bg-black hover:text-white transition-all">
+                    <i class="fa-solid fa-copy"></i>
+                    Copy link
+                </button>
+            </div>
+
+            <p class="text-gray-500 text-sm mt-8">Investments involve risks. T&Cs apply.</p>
+        </div>
+    </header>
+
+    <!-- WHAT YOU GET -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="text-4xl font-semibold text-center mb-4" data-i18n="you-get-title">What you get</h2>
+            <p class="text-center text-gray-500 mb-12">Welcome bonus + everything Trade Republic offers</p>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="card bg-white border border-zinc-200 rounded-3xl p-8 text-center">
+                    <div class="mx-auto w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-gift text-4xl text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl mb-2">Welcome Bonus</h3>
+                    <p class="text-gray-600">Locked in the second you sign up via this link</p>
+                </div>
+                <div class="card bg-white border border-zinc-200 rounded-3xl p-8 text-center">
+                    <div class="mx-auto w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-chart-line text-4xl text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl mb-2">Invest from €1</h3>
+                    <p class="text-gray-600">Stocks • ETFs • Crypto • Savings plans. Zero commission.</p>
+                </div>
+                <div class="card bg-white border border-zinc-200 rounded-3xl p-8 text-center">
+                    <div class="mx-auto w-16 h-16 bg-black rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-credit-card text-4xl text-white"></i>
+                    </div>
+                    <h3 class="font-semibold text-2xl mb-2">Free Card + 1% Saveback</h3>
+                    <p class="text-gray-600">Spend anywhere and earn cashback</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHAT I GET -->
+    <section class="py-20 bg-zinc-50">
+        <div class="max-w-2xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-semibold mb-6" data-i18n="i-get-title">What I get (full transparency)</h2>
+            <div class="bg-white border border-zinc-200 p-10 rounded-3xl">
+                <div class="text-7xl font-bold">3%</div>
+                <p class="text-2xl font-medium mt-2">interest on my cash</p>
+                <p class="mt-8 text-gray-600">For 3 months per friend who joins, deposits & invests. Up to 1 year max.</p>
+                <p class="text-xs text-gray-400 mt-6">*T&Cs apply • Investments involve risks</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-12 text-center text-sm">
+        <div class="max-w-5xl mx-auto px-6">
+            <p>Independent referral page. Not officially affiliated with Trade Republic.</p>
+            <p class="mt-4">© Trade Republic Bank • Investments involve risks. T&Cs apply.</p>
+        </div>
+    </footer>
+
+    <script>
+        function copyLink() {
+            navigator.clipboard.writeText("https://refnocode.trade.re/rtbld676");
+            const notif = document.createElement('div');
+            notif.textContent = 'Link copied!';
+            notif.style.cssText = 'position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#000;color:white;padding:12px 24px;border-radius:9999px;font-weight:500;';
+            document.body.appendChild(notif);
+            setTimeout(() => notif.remove(), 2000);
+        }
+    </script>
+</body>
+</html>
